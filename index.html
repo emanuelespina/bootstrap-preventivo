@@ -55,110 +55,116 @@
     <div class="container">
 
       <div class="row my-4">
-        <div class="col-8">
 
-          <div class="row g-3">
+        <!-- sezione principale -->
 
-            <!-- input nome -->
+        <section class="col-8">
 
-            <div class="col-12">
-              <label for="nameInput" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="nameInput">
-            </div>
+          <form action="" id="preventiveForm">
 
-            <!-- input cognome -->
+            <div class="row g-3">
 
-            <div class="col-12">
-              <label for="lastNameInput" class="form-label">Cognome</label>
-              <input type="text" class="form-control" id="lastNameInput">
-            </div>
+              <!-- input nome -->
 
-            <!-- input email -->
-
-            <div class="col-12">
-              <label for="emailInput" class="form-label">Email</label>
-              <input type="email" class="form-control" id="emailInput">
-            </div>
-
-            <!-- input select -->
-
-            <div class="col-12">
-              <label for="" class="form-label">Tipo di Lavoro</label>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Seleziona il tipo di lavoro</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-
-            <!-- input textarea  -->
-
-            <div class="col-12">
-              <label for="" class="form-label">Textarea con Bootstrap 5</label>
-              <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>              
-            </div>
-
-            <!-- input codice promozionale -->
-
-            <div class="col-12">
-              <label for="lastNameInput" class="form-label">Codice promozionale (opzionale)</label>
-              <input type="text" class="form-control" id="lastNameInput">
-            </div>
-
-            <!-- check input -->
-
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Accetto la Privacy Policy
-                </label>
+              <div class="col-12">
+                <label for="nameInput" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nameInput">
               </div>
-            </div>
 
-            <!-- pusante -->
+              <!-- input cognome -->
 
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <button class="btn btn-primary" type="submit">Calcola Preventivo</button>
-            </div>
-            <div class="col-6 d-flex justify-content-center align-items-center">
-              <div>
-                <h2 class="m-0">ciao</h2>
-                <p class="m-0">ciao </p>
+              <div class="col-12">
+                <label for="lastNameInput" class="form-label">Cognome</label>
+                <input type="text" class="form-control" id="lastNameInput">
               </div>
+
+              <!-- input email -->
+
+              <div class="col-12">
+                <label for="emailInput" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailInput">
+              </div>
+
+              <!-- input select -->
+
+              <div class="col-12">
+                <label for="workSelect" class="form-label">Tipo di Lavoro</label>
+                <select class="form-select" aria-label="Default select example" id="workSelect">
+                  <option selected>Seleziona il tipo di lavoro</option>                  
+                </select>
+              </div>
+
+              <!-- input textarea  -->
+
+              <div class="col-12">
+                <label for="floatingTextarea" class="form-label">Textarea con Bootstrap 5</label>
+                <textarea class="form-control" id="floatingTextarea" style="height: 100px"></textarea>
+              </div>
+
+              <!-- input codice promozionale -->
+
+              <div class="col-12">
+                <label for="promotionalCode" class="form-label">Codice promozionale (opzionale)</label>
+                <input type="text" class="form-control" id="promotionalCode">
+              </div>
+
+              <!-- check input -->
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="privacyCheck">
+                  <label class="form-check-label" for="privacyCheck">
+                    Accetto la Privacy Policy
+                  </label>
+                </div>
+              </div>
+
+              <!-- bottone -->
+
+              <div class="col-6 d-flex justify-content-center align-items-center">
+                <button class="btn btn-primary" type="submit">Calcola Preventivo</button>
+              </div>
+
+              <!-- prezzo finale -->
+
+              <div class="col-6 d-flex justify-content-center align-items-center">
+                <div>
+                  <h5 class="m-0 text-center">Prezzo finale</h5>
+                  <p class="m-0 text-center" id="finalPrice"></p>                  
+                </div>
+              </div>
+
             </div>
 
-            
-          </div>
+          </form>
 
-        </div>
+        </section>
 
+        <!-- sezione per le info -->
 
-        <div class="col-4">
+        <section class="col-4">
           <div class="card">
             <img src="./img/Immagine WhatsApp 2025-03-10 ore 22.16.35_d05fca7f.jpg" class="card-img-top"
-              alt="Bool Factory Logo" width="300px" height="200px">
+              alt="Bool Factory Logo">
             <div class="card-body">
-              <h5 class="card-title">Xuxu</h5>
-              <p class="card-text">lo Xuxu di Gabriel
-                content.</p>
+              <h5 class="card-title">I nostri contatti</h5>
+              <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">help@boolfactory.test</li>
+              <li class="list-group-item">+1122334455</li>
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Help desk</a>
             </div>
           </div>
-        </div>
+        </section>
+
+
       </div>
 
     </div>
-   
+
   </main>
 
   <!-- fine main -->
