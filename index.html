@@ -58,7 +58,10 @@
 
         <!-- sezione principale -->
 
-        <section class="col-8">
+        <section class="col-12 col-lg-8 mb-5">
+
+          <h2>Richiesta Preventivo</h2>
+          <p>Compila il form per richiedere un preventivo per i nostri servizzi di sviluppo</p>
 
           <form action="" id="preventiveForm">
 
@@ -68,21 +71,21 @@
 
               <div class="col-12">
                 <label for="nameInput" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nameInput">
+                <input type="text" class="form-control" id="nameInput" required autocomplete="off">
               </div>
 
               <!-- input cognome -->
 
               <div class="col-12">
                 <label for="lastNameInput" class="form-label">Cognome</label>
-                <input type="text" class="form-control" id="lastNameInput">
+                <input type="text" class="form-control" id="lastNameInput" required autocomplete="off">
               </div>
 
               <!-- input email -->
 
               <div class="col-12">
                 <label for="emailInput" class="form-label">Email</label>
-                <input type="email" class="form-control" id="emailInput">
+                <input type="email" class="form-control" id="emailInput" required autocomplete="off">
               </div>
 
               <!-- input select -->
@@ -105,12 +108,18 @@
 
               <div class="col-12">
                 <label for="promotionalCode" class="form-label">Codice promozionale (opzionale)</label>
-                <input type="text" class="form-control" id="promotionalCode">
+                <input type="text" class="form-control" id="promotionalCode" autocomplete="off">
+              </div>
+
+              <!-- messaggio di errore codice promozionale -->
+
+              <div class="d-none col-12 p-1 alert alert-danger" role="alert" id="promotionalAllert">
+                Codice promozionale non è valido inserirene uno corretto
               </div>
 
               <!-- check input -->
 
-              <div class="col-12">
+              <div class="col-7">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="privacyCheck">
                   <label class="form-check-label" for="privacyCheck">
@@ -119,17 +128,23 @@
                 </div>
               </div>
 
+              <!-- messaggio di errore check -->
+
+              <div class="d-none col-5 p-0 alert alert-danger" role="alert" id="checkAllert">
+                Consentire la privacy per continuare
+              </div>
+              
               <!-- bottone -->
 
-              <div class="col-6 d-flex justify-content-center align-items-center">
+              <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
                 <button class="btn btn-primary" type="submit">Calcola Preventivo</button>
               </div>
 
               <!-- prezzo finale -->
 
-              <div class="col-6 d-flex justify-content-center align-items-center">
+              <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
                 <div>
-                  <h5 class="m-0 text-center">Prezzo finale</h5>
+                  <h4 class="m-0 text-center">Prezzo finale</h4>
                   <p class="m-0 text-center" id="finalPrice"></p>                  
                 </div>
               </div>
@@ -142,7 +157,7 @@
 
         <!-- sezione per le info -->
 
-        <section class="col-4">
+        <section class="col-12 col-lg-4 mb-5">
           <div class="card">
             <img src="./img/Immagine WhatsApp 2025-03-10 ore 22.16.35_d05fca7f.jpg" class="card-img-top"
               alt="Bool Factory Logo">
@@ -171,6 +186,11 @@
 
   <footer>
 
+    <div class="text-center text-bg-dark p-4">
+
+      <p><i class="bi bi-c-circle"></i> 2024 - Tutti i diritti riservati</p>
+
+    </div>
 
   </footer>
 

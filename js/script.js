@@ -13,7 +13,11 @@ const floatingTextarea = document.getElementById("floatingTextarea");
 
 const promotionalCode = document.getElementById("promotionalCode");
 
+const promotionalAllert = document.getElementById("promotionalAllert");
+
 const privacyCheck = document.getElementById("privacyCheck");
+
+const checkAllert = document.getElementById("checkAllert")
 
 const finalPrice = document.getElementById("finalPrice");
 
@@ -65,23 +69,31 @@ function preventiveCalculator (event) {
 
     event.preventDefault();
 
+    //setto gli allarmi non visibili
+
+    checkAllert.classList.add("d-none");
+
+    promotionalAllert.classList.add("d-none");
+
     const workPrice = workhours * works[workSelect.value].price;
 
     console.log(workPrice);
 
-    console.log(promotionalCode.value);        
-       
-    if (promotionalCode.value === ""){
-        finalPrice.innerHTML = graficPrice(workPrice.toFixed(2));
-    }else if (correctDiscountCode(promotionalCode.value) === true){
-        finalPrice.innerHTML = graficPrice((workPrice - (workPrice * discount)/100).toFixed(2));
-    }else {
-        finalPrice.innerHTML = graficPrice(workPrice.toFixed(2));
-        // fai uscire il messaggio di errore
-    }
-    
+    if (privacyCheck.checked === true){
 
+        if (promotionalCode.value === ""){
+            finalPrice.innerHTML = graficPrice(workPrice.toFixed(2));
+        }else if (correctDiscountCode(promotionalCode.value) === true){
+            finalPrice.innerHTML = graficPrice((workPrice - (workPrice * discount)/100).toFixed(2));
+        }else {
+            finalPrice.innerHTML = graficPrice(workPrice.toFixed(2));
+            promotionalAllert.classList.remove("d-none");
+        }      
 
+    } else {
+        checkAllert.classList.remove("d-none");
+    }            
+        
 }
 
 // Funzione per verificare che il codice promozionale sia corretto
@@ -96,7 +108,7 @@ function correctDiscountCode (code){
         }
     }
 
-    return correctCode
+    return correctCode;
     
 }
 
@@ -120,7 +132,7 @@ function graficPrice (price){
 
     }   
 
-    return `<span class="h5">€ ${boltNumber}</span>,${normalNumber}`
+    return `<span class="h4">€ ${boltNumber}</span>,${normalNumber}`;
 
 }
 
