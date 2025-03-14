@@ -29,7 +29,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="#">Home</a>
             </li>
@@ -61,7 +61,7 @@
         <section class="col-12 col-lg-8 mb-5">
 
           <h2>Richiesta Preventivo</h2>
-          <p>Compila il form per richiedere un preventivo per i nostri servizzi di sviluppo</p>
+          <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
 
           <form action="" id="preventiveForm">
 
@@ -88,13 +88,19 @@
                 <input type="email" class="form-control" id="emailInput" required autocomplete="off">
               </div>
 
-              <!-- input select -->
+              <!-- input select seleziona il tipo di lavoro -->
 
               <div class="col-12">
                 <label for="workSelect" class="form-label">Tipo di Lavoro</label>
                 <select class="form-select" aria-label="Default select example" id="workSelect">
-                  <option selected>Seleziona il tipo di lavoro</option>                  
+                  <option selected value="null">Seleziona il tipo di lavoro</option>                  
                 </select>
+              </div>
+
+              <!-- messaggio di errore nel selezionare il lavoro -->
+
+              <div class="d-none col-12 col-lg-5 p-0 alert alert-danger" role="alert" id="selecAlert">
+                Seleziona un lavoro per procedere
               </div>
 
               <!-- input textarea  -->
@@ -113,13 +119,13 @@
 
               <!-- messaggio di errore codice promozionale -->
 
-              <div class="d-none col-12 p-1 alert alert-danger" role="alert" id="promotionalAllert">
+              <div class="d-none col-12 p-1 alert alert-danger" role="alert" id="promotionalAlert">
                 Codice promozionale non è valido inserirene uno corretto
               </div>
 
               <!-- check input -->
 
-              <div class="col-7">
+              <div class="col-12 col-lg-7">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="privacyCheck">
                   <label class="form-check-label" for="privacyCheck">
@@ -130,7 +136,7 @@
 
               <!-- messaggio di errore check -->
 
-              <div class="d-none col-5 p-0 alert alert-danger" role="alert" id="checkAllert">
+              <div class="d-none col-12 col-lg-5 p-0 alert alert-danger" role="alert" id="checkAlert">
                 Consentire la privacy per continuare
               </div>
               
