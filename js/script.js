@@ -48,7 +48,7 @@ const workhours = 10;
 
 ////////////////////////////////////////////////
 
-//Creazione in modo dinamico della parte select
+//Creazione in modo dinamico della parte workSelect
 
 for (let i = 0; i < works.length; i++) {
     workSelect.innerHTML += `<option value="${i}">${works[i].work}</option>`;
@@ -63,9 +63,9 @@ preventiveForm.addEventListener("submit", preventiveCalculator);
 
 ////////////////////////////////////////////////
 
-// Funzioni
+// FUNZIONI
 
-// Fuozione principale che si avvierà se premiamo il pulsante
+// Fuozione principale che si avvierà quando il pulsante verrà premuto
 
 function preventiveCalculator(event) {
 
@@ -77,22 +77,39 @@ function preventiveCalculator(event) {
 
     promotionalAlert.classList.add("d-none");
 
-    selecAlert.classList.add("d-none");    
-
-    const workPrice = workhours * works[workSelect.value].price;
+    selecAlert.classList.add("d-none");
     
+    //controllo che l'utente abbia acconsentito alla privacy
 
     if (privacyCheck.checked === true) {
 
-        if (workSelect.value === "null") {
+        //constrollo che l'utente abbia selezionato un lavoro tra quelli proposti
+
+        if (workSelect.value === "notSelect") {
             selecAlert.classList.remove("d-none");
         } else {
 
+            //calcolo il prezzo a listino del preventivo 
+
+            const workPrice = workhours * works[workSelect.value].price;
+
+            //controllo se l'utente ha inserito un codice promozionale e se quest'ultimo è corretto
+
+            // nessun codice promozionale => il prezzo finale è uguale a quello di listino
+
             if (promotionalCode.value === "") {
                 finalPrice.innerHTML = graficPrice(workPrice.toFixed(2));
-            } else if (correctDiscountCode(promotionalCode.value) === true) {
+            } else 
+            
+            //codice promozionale coretto => viene applicato lo sconto deciso 
+
+            if (correctDiscountCode(promotionalCode.value) === true) {
                 finalPrice.innerHTML = graficPrice((workPrice - (workPrice * discount) / 100).toFixed(2));
-            } else {
+            } 
+            
+            //codice promozionale sbagliato => il prezzo finale è uguale a quello di listino e viene mostrato il messaggio di errore
+            
+            else {
                 finalPrice.innerHTML = graficPrice(workPrice.toFixed(2));
                 promotionalAlert.classList.remove("d-none");
             }
@@ -107,6 +124,8 @@ function preventiveCalculator(event) {
 // Funzione per verificare che il codice promozionale sia corretto
 
 function correctDiscountCode(code) {
+
+    //imposto una varibila falsa e se il valore inserito è uguale a quello dentro la varibile lo cambio in vero
 
     let correctCode = false;
 
@@ -123,6 +142,8 @@ function correctDiscountCode(code) {
 // Funzione per immettere il prezzo finale con la grafica corretta
 
 function graficPrice(price) {
+
+    //divide il numero preso come stringa in cifre prima del punto e cifre dopo il punto
 
     let point = price.indexOf(".");
 
